@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Ensure content is centered below the Top-Panel */
+    box-sizing: border-box;  /* Ensures padding and borders are included in width/height */
+}
+
+.Top-Panel {
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0; /* Ensures no space on the left */
+    width: 100%; /* Span the full width of the viewport */
+    display: flex;
+    background-color: black;
+    color: white; /* Text color for visibility */
+    padding: 10px; /* Optional padding */
+    z-index: 2; /* Ensure it stays on top of other elements */
+    box-sizing: border-box; /* Prevents unintended padding from expanding the panel */
+}
+
+.Background-Image {
+    opacity: 40%;
+    background-color: black;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+.Search-Panel {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: transparent;
+    display: flex;
+    margin-top: 100px; /* Push the search panel down to avoid overlap with the top panel */
+}
+
+.Search {
+    outline: 50px;
+    width: 90%;
+    margin: 10%;
+}
+
+.Button {
+    margin: 40%;
+    z-index: 1;
+    background-color: blue;
+    color: white;
+    width: 100%;
+}
+
+.Button:hover {
+    background-color: darkblue;
+}
