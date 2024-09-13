@@ -1,24 +1,28 @@
 import {React} from 'react'
-import Search from '../../Components/Search'
 import TextField from "@mui/material/TextField";
 import "./home.css"
 import bg from "./bg.jpg"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
+import BusRoutes from "../BusRoutes/BusRoutes"
 
-function handleClick(date,from,to) {
-    console.log(date,from,to)
-}
+
 export default function Home() {
+    const navigate = useNavigate()
     const [date, setDate] = useState(new Date());
     const [from, setFrom] = useState('')
     const [to, setTo] = useState('')
+    function handleClick(date,from,to) {
+        console.log(date,from,to)
+        navigate("/BusRoutes")
+    
+    }
   return (
-
     <div className='home'>
         <div>
-        <img src={bg} className='Background-Image'/>
+        <img src={bg} className='Background-Image'alt='404 Not found!'/>
         </div>
         <div className='Top-Panel'>SIH PROJECT</div>
       <div className='Search-Panel'>
@@ -90,7 +94,7 @@ export default function Home() {
           <DatePicker selected={date} onChange={(date) => setDate(date)} className='Date-Picker' />
           </div>
           <div>
-          <button className='Button' onClickCapture={() => handleClick(date, from, to)} >Click Me!</button>
+          <button className='Button' onClickCapture={() => handleClick(date, from, to)}  >Click Me!</button>
           </div>
         </div>
     </div>
